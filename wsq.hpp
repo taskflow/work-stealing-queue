@@ -3,6 +3,7 @@
 #include <atomic>
 #include <vector>
 #include <optional>
+#include <cassert>
 
 /**
 @class: WorkStealingQueue
