@@ -38,6 +38,16 @@ thief.join();
 The library is a single header file. 
 Simply compile your source with include path to [wsq.hpp](wsq.hpp).
 
+# Compile Examples and Unittests
+
+We use cmake to manage the package. We recommand using out-of-source build:
+
+```bash
+~$ mkdir build
+~$ cd build
+~$ make & make test
+```
+
 # Technical Details
 
 This library implements the work-stealing queue algorithm
