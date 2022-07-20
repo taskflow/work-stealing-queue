@@ -45,6 +45,7 @@ We use cmake to manage the package. We recommand using out-of-source build:
 ```bash
 ~$ mkdir build
 ~$ cd build
+~$ cmake ..
 ~$ make & make test
 ```
 
