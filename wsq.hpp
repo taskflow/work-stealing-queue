@@ -4,6 +4,7 @@
 #include <vector>
 #include <optional>
 #include <cassert>
+#include <new>
 
 /**
 @class: WorkStealingQueue
@@ -61,8 +62,14 @@ class WorkStealingQueue {
 
   };
 
-  std::atomic<int64_t> _top;
-  std::atomic<int64_t> _bottom;
+  // avoids false sharing between _top and _bottom
+#ifdef __cpp_lib_hardware_interference_size
+  alignas(std::hardware_destructive_interference_size) std::atomic<int64_t> _top;
+  alignas(std::hardware_destructive_interference_size) std::atomic<int64_t> _bottom;
+#else
+  alignas(64) std::atomic<int64_t> _top;
+  alignas(64) std::atomic<int64_t> _bottom;
+#endif
   std::atomic<Array*> _array;
   std::vector<Array*> _garbage;
 
