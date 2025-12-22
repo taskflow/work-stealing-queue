@@ -61,7 +61,7 @@ at 2013 ACM Principles and Practice of Parallel Programming (PPoPP).
 # Robustness
 
 This library is part of the 
-[Cpp-Taskflow](https://github.com/cpp-taskflow/cpp-taskflow)
+[Taskflow](https://github.com/taskflow/taskflow)
 project.
 It has experienced thousands of tests in both micro-benchmarks
 and large-scale real-world parallel applications.
